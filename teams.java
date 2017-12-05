@@ -8,10 +8,10 @@ public class Teams {
     int place;
     public Teams(String name) {this.name = name;}
     //Asetetaan int place
-    private void setPlace(int place) {this.place = place;}
+    protected void setPlace(int place) {this.place = place;}
     //Annetaan name ja place
-    private String giveName() {return name;}
-    private int givePlace() {return place;}
+    protected String giveName() {return name;}
+    protected int givePlace() {return place;}
     //Tulostus
     public String toString() {return "Team name: "+name+" Place: "+place;}
 }
