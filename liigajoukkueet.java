@@ -36,5 +36,10 @@ public class Liigajoukkueet {
         for (int i = 0;i < liiga.length; i++){
             System.out.println(liiga[i]);
         }
+        liiga = t.rightOrderList();
+        System.out.println("Liigajoukkueet oikeassa järjestyksessä");
+        for (int i = 0;i < liiga.length; i++){
+            System.out.println(liiga[i]);
+        }
     }
 }
