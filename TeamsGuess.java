@@ -13,5 +13,5 @@ public class TeamsGuess extends Teams{
     private void setPlace(int place) {System.out.println("No posible");}
     private int getPoints() {
         return points;
-    }
+    } 
 }
