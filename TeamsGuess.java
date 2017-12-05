@@ -7,11 +7,9 @@ public class TeamsGuess extends Teams{
         super(name);
         this.place = place;
     }
-    private void setPoints(int points) {
+    protected void setPoints(int points) {
         this.points = points;
     }
-    private void setPlace(int place) {System.out.println("No posible");}
-    private int getPoints() {
-        return points;
-    } 
+    private setPlace(int place) {System.out.println("No posible");}
+    private int getPoints() {return points;}
 }
