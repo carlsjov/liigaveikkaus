@@ -17,5 +17,8 @@ public class liigajoukkueet {
         liiga[13] = new Teams("Tappara");
         liiga[14] = new Teams("Ilves");
         System.out.println("joukkueet tehty");
+        for (int i = 0;i < liiga.length; i++){
+            System.out.println(liiga[i]);
+        }
     }
 }
