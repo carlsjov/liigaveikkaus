@@ -1,4 +1,5 @@
 //arvausmechanics
+//testi
 import java.io.*;
 import java.io.IOException;
 public class arvaus {
@@ -6,7 +7,7 @@ public class arvaus {
     InputStreamReader cin = null;
     try {
         cin = new InputStreamReader(System.in);
-        System.out.Println("Anna arvaus joukkueelle "+)
+        System.out.Println("Anna arvaus joukkueelle "+);
     }
     }
 }

@@ -1,3 +1,4 @@
+
 public class Liigajoukkueet {
     public Teams[] getTeams(){
         Teams[] liiga = new Teams[15];
