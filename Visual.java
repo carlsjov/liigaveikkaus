@@ -18,6 +18,8 @@ import javax.swing.JPanel;
 
 public class Visual extends JFrame implements ActionListener{
    private static final long serialVersionUID = 1L;
+   private JPanel p1 = new JPanel();
+   private JPanel p2 = new JPanel();
 
    public static void main(String[] args) {
        new Visual().setVisible(true);
@@ -28,8 +30,6 @@ public class Visual extends JFrame implements ActionListener{
        setSize(600, 600);
        setResizable(false);
        setDefaultCloseOperation(EXIT_ON_CLOSE);
-       JPanel p1 = new JPanel();
-       JPanel p2 = new JPanel();
        p1.setBackground(Color.YELLOW);
        p2.setBackground(Color.BLUE);
        p1.setLayout(new FlowLayout());
@@ -52,11 +52,7 @@ public class Visual extends JFrame implements ActionListener{
        file.addSeparator();
        file.add(exit);
        p1.add(kokeilu);
-       LiigaJoukkueetVisual a = new LiigaJoukkueetVisual();
-       JButton[] joukkueet = a.painikkeet();
-       for(int i=0;i<15;i++){
-           p2.add(joukkueet[i]);
-       }
+       MadeTeams();
        add(p1,BorderLayout.WEST);
        add(p2, BorderLayout.EAST);
        setJMenuBar(bar);
@@ -65,4 +61,12 @@ public class Visual extends JFrame implements ActionListener{
    public void actionPerformed (ActionEvent e){
        System.out.println("Nappia painettiin");
    }//actionPerformed
+   private void MadeTeams() {
+        Teams[] joukkueet = new Liigajoukkueet().getTeams();
+        JButton[] painikkeet = new JButton[15];
+        for(int i = 0; i<15;i++){
+            painikkeet[i] = new JButton(joukkueet[i].giveName());
+            p2.add(painikkeet[i]);
+        }
+   }
 }//Visual
