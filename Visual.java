@@ -20,6 +20,7 @@ public class Visual extends JFrame implements ActionListener{
    private static final long serialVersionUID = 1L;
    private JPanel p1 = new JPanel();
    private JPanel p2 = new JPanel();
+   private JMenuBar bar = new JMenuBar();
 
    public static void main(String[] args) {
        new Visual().setVisible(true);
@@ -37,24 +38,11 @@ public class Visual extends JFrame implements ActionListener{
 
        JButton kokeilu = new JButton("Nappi");
        kokeilu.addActionListener(this);
-
-       JMenuBar bar = new JMenuBar();
-       JMenu file = new JMenu("File");
-       JMenuItem open = new JMenuItem("open");
-       JMenuItem talo = new JMenuItem("talo");
-       JMenuItem uusi = new JMenu("Uusi");
-       JMenuItem exit = new JMenuItem("Exit");
-       
-       bar.add(file);
-       file.add(uusi);
-       uusi.add(talo);
-       file.add(open);
-       file.addSeparator();
-       file.add(exit);
+       Bar();
        p1.add(kokeilu);
        MadeTeams();
        add(p1,BorderLayout.WEST);
-       add(p2, BorderLayout.EAST);
+       add(p2);
        setJMenuBar(bar);
    }//Visual()
 
@@ -66,7 +54,21 @@ public class Visual extends JFrame implements ActionListener{
         JButton[] painikkeet = new JButton[15];
         for(int i = 0; i<15;i++){
             painikkeet[i] = new JButton(joukkueet[i].giveName());
+            painikkeet[i].setBackground(Color.red);
             p2.add(painikkeet[i]);
         }
+   }
+   private void Bar(){
+       JMenu file = new JMenu("File");
+       JMenuItem open = new JMenuItem("open");
+       JMenuItem talo = new JMenuItem("talo");
+       JMenuItem uusi = new JMenu("Uusi");
+       JMenuItem exit = new JMenuItem("Exit");
+       bar.add(file);
+       file.add(uusi);
+       uusi.add(talo);
+       file.add(open);
+       file.addSeparator();
+       file.add(exit);
    }
 }//Visual
