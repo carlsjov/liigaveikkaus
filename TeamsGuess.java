@@ -7,8 +7,8 @@ public class TeamsGuess{
     final String plauerName;
     final Teams[] teams;
     int points;
-    public TeamsGuess(String name,Teams[] teams){
-        plauerName = name;
+    public TeamsGuess(String plauerName, Teams[] teams){
+        this.plauerName = plauerName;
         this.teams = teams;
     }
     protected void setPoints(int points) {

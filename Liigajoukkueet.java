@@ -2,10 +2,10 @@
 public class Liigajoukkueet { 
     public Teams[] getTeams(){
         Teams[] liiga = new Teams[15];
-        liiga[0] = new Teams("�ss�t",1);
+        liiga[0] = new Teams("assat",1);
         liiga[1] = new Teams("Lukko",2);
         liiga[2] = new Teams("TPS",3);
-        liiga[3] = new Teams("K�rp�t",4);
+        liiga[3] = new Teams("Karpat",4);
         liiga[4] = new Teams("HPK",5);
         liiga[5] = new Teams("JYP",6);
         liiga[6] = new Teams("HIFK",7);
@@ -27,8 +27,24 @@ public class Liigajoukkueet {
         Liigajoukkueet o = new Liigajoukkueet();
         SetTeams t = new SetTeams();
         Teams[] liiga = o.getTeams();
+        FileIn f = new FileIn();
+        liiga = f.ReadLiiga();
+        TeamsGuess[] tG = f.ReadGuess();
+        
         for (int i = 0;i < liiga.length; i++){
             System.out.println(liiga[i]);
+        }
+        if(tG.length>0){
+            for (int i = 0;i < tG.length; i++){
+                System.out.println(tG[i].plauerName);
+                Teams[] b = tG[i].getTeams();
+                for (int x = 0;x < b.length; x++){
+                    System.out.println(b[x]);
+            }
+        }
+        }
+        else{
+            System.out.println("Ei pelaajia");
         }
         System.out.println(liiga[5].givePlace());
         System.out.println(liiga[14].giveName());

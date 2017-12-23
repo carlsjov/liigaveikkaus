@@ -1,1 +1,33 @@
-0
+2
+Pekka
+assat 1
+Lukko 2
+TPS 3
+Karpat 4
+HPK 5
+JYP 6
+HIFK 7
+Sport 8
+Jukurit 9
+KooKoo 10
+SaiPa 11
+Pelicans 12
+KalPa 13
+Tappara 14
+Ilves 15
+Liisa
+assat 1
+Lukko 2
+TPS 3
+Karpat 4
+HPK 5
+JYP 6
+HIFK 7
+Sport 8
+Jukurit 9
+KooKoo 10
+SaiPa 11
+Pelicans 12
+KalPa 13
+Tappara 14
+Ilves 15
