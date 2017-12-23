@@ -7,9 +7,9 @@ Karpat 4
 HPK 5
 JYP 6
 HIFK 7
-Sport 8
+Sport 10
 Jukurit 9
-KooKoo 10
+KooKoo 8
 SaiPa 11
 Pelicans 12
 KalPa 13
@@ -18,16 +18,16 @@ Ilves 15
 Liisa
 assat 1
 Lukko 2
-TPS 3
+TPS 8
 Karpat 4
 HPK 5
 JYP 6
 HIFK 7
-Sport 8
-Jukurit 9
+Sport 3
+Jukurit 15
 KooKoo 10
 SaiPa 11
 Pelicans 12
 KalPa 13
 Tappara 14
-Ilves 15
+Ilves 9

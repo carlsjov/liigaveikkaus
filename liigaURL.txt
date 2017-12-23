@@ -1,0 +1,248 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 6]><html id="ie6" lang="fi"><![endif]-->
+<!--[if IE 7]><html id="ie7" lang="fi"><![endif]-->
+<!--[if IE 8]><html id="ie8" lang="fi"><![endif]-->
+<!--[if !(IE 6) | !(IE 7) | !(IE 8)  ]><!--><html lang="fi"><!--<![endif]-->
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+    <meta content="utf-8" http-equiv="encoding">
+    <link href="http://fonts.googleapis.com/css?family=Exo:400,800,400italic,800italic" rel="stylesheet" type="text/css">
+    <link href="http://fonts.googleapis.com/css?family=Roboto:300,700" rel="stylesheet" type="text/css">
+    <link href="/static/ext/font-awesome-4.2.0/css/font-awesome.min.v0fb1bbca.css" rel="stylesheet">
+    <link href="/static/liiga/stats/css/team_standings_embed.v95d07aa4.css" rel="stylesheet">
+  </head>
+  <body>
+    <div id="content-boxes">
+      <div class="team-standings">
+        
+  <div class="content">
+    <div class="head">
+      <h2>Liiga Sarjataulukko</h2>
+      
+    </div>
+    <div class="standings">
+      <table id="team-table">
+        <thead>
+          <tr>
+            <td class="ta-l" colspan="2">Joukkue</td>
+            <td class="num">O</td>
+            <td class="num">V</td>
+            <td class="num">T</td>
+            <td class="num">H</td>
+            <td class="num">LP</td>
+            <td class="num h-l">TM</td>
+            <td class="num h-l">PM</td>
+            <td class="num">P</td>
+          </tr>
+        </thead>
+        <tbody>
+          
+            <tr >
+              <td class="index">1.</td>
+              <td class="ta-l">Kärpät</td>
+              <td class="num">34</td>
+              <td class="num">20</td>
+              <td class="num">7</td>
+              <td class="num">7</td>
+              <td class="num">5</td>
+              <td class="num h-l">107</td>
+              <td class="num h-l">64</td>
+              <td class="num points">72</td>
+            </tr>
+          
+            <tr >
+              <td class="index">2.</td>
+              <td class="ta-l">TPS</td>
+              <td class="num">34</td>
+              <td class="num">18</td>
+              <td class="num">9</td>
+              <td class="num">7</td>
+              <td class="num">3</td>
+              <td class="num h-l">107</td>
+              <td class="num h-l">83</td>
+              <td class="num points">66</td>
+            </tr>
+          
+            <tr >
+              <td class="index">3.</td>
+              <td class="ta-l">Tappara</td>
+              <td class="num">34</td>
+              <td class="num">15</td>
+              <td class="num">12</td>
+              <td class="num">7</td>
+              <td class="num">7</td>
+              <td class="num h-l">96</td>
+              <td class="num h-l">69</td>
+              <td class="num points">64</td>
+            </tr>
+          
+            <tr >
+              <td class="index">4.</td>
+              <td class="ta-l">JYP</td>
+              <td class="num">33</td>
+              <td class="num">17</td>
+              <td class="num">4</td>
+              <td class="num">12</td>
+              <td class="num">1</td>
+              <td class="num h-l">95</td>
+              <td class="num h-l">78</td>
+              <td class="num points">56</td>
+            </tr>
+          
+            <tr >
+              <td class="index">5.</td>
+              <td class="ta-l">Ässät</td>
+              <td class="num">34</td>
+              <td class="num">14</td>
+              <td class="num">8</td>
+              <td class="num">12</td>
+              <td class="num">6</td>
+              <td class="num h-l">91</td>
+              <td class="num h-l">98</td>
+              <td class="num points">56</td>
+            </tr>
+          
+            <tr >
+              <td class="index">6.</td>
+              <td class="ta-l">HIFK</td>
+              <td class="num">33</td>
+              <td class="num">14</td>
+              <td class="num">9</td>
+              <td class="num">10</td>
+              <td class="num">2</td>
+              <td class="num h-l">83</td>
+              <td class="num h-l">71</td>
+              <td class="num points">53</td>
+            </tr>
+          
+            <tr >
+              <td class="index">7.</td>
+              <td class="ta-l">Lukko</td>
+              <td class="num">34</td>
+              <td class="num">13</td>
+              <td class="num">8</td>
+              <td class="num">13</td>
+              <td class="num">6</td>
+              <td class="num h-l">78</td>
+              <td class="num h-l">67</td>
+              <td class="num points">53</td>
+            </tr>
+          
+            <tr >
+              <td class="index">8.</td>
+              <td class="ta-l">SaiPa</td>
+              <td class="num">34</td>
+              <td class="num">12</td>
+              <td class="num">10</td>
+              <td class="num">12</td>
+              <td class="num">6</td>
+              <td class="num h-l">83</td>
+              <td class="num h-l">93</td>
+              <td class="num points">52</td>
+            </tr>
+          
+            <tr >
+              <td class="index">9.</td>
+              <td class="ta-l">KalPa</td>
+              <td class="num">33</td>
+              <td class="num">14</td>
+              <td class="num">6</td>
+              <td class="num">13</td>
+              <td class="num">3</td>
+              <td class="num h-l">73</td>
+              <td class="num h-l">76</td>
+              <td class="num points">51</td>
+            </tr>
+          
+            <tr >
+              <td class="index">10.</td>
+              <td class="ta-l">Pelicans</td>
+              <td class="num">34</td>
+              <td class="num">13</td>
+              <td class="num">8</td>
+              <td class="num">13</td>
+              <td class="num">3</td>
+              <td class="num h-l">96</td>
+              <td class="num h-l">98</td>
+              <td class="num points">50</td>
+            </tr>
+          
+            <tr >
+              <td class="index">11.</td>
+              <td class="ta-l">KooKoo</td>
+              <td class="num">33</td>
+              <td class="num">9</td>
+              <td class="num">11</td>
+              <td class="num">13</td>
+              <td class="num">4</td>
+              <td class="num h-l">87</td>
+              <td class="num h-l">99</td>
+              <td class="num points">42</td>
+            </tr>
+          
+            <tr >
+              <td class="index">12.</td>
+              <td class="ta-l">Sport</td>
+              <td class="num">34</td>
+              <td class="num">9</td>
+              <td class="num">8</td>
+              <td class="num">17</td>
+              <td class="num">3</td>
+              <td class="num h-l">91</td>
+              <td class="num h-l">115</td>
+              <td class="num points">38</td>
+            </tr>
+          
+            <tr >
+              <td class="index">13.</td>
+              <td class="ta-l">Ilves</td>
+              <td class="num">33</td>
+              <td class="num">9</td>
+              <td class="num">6</td>
+              <td class="num">18</td>
+              <td class="num">4</td>
+              <td class="num h-l">87</td>
+              <td class="num h-l">116</td>
+              <td class="num points">37</td>
+            </tr>
+          
+            <tr >
+              <td class="index">14.</td>
+              <td class="ta-l">HPK</td>
+              <td class="num">35</td>
+              <td class="num">9</td>
+              <td class="num">4</td>
+              <td class="num">22</td>
+              <td class="num">4</td>
+              <td class="num h-l">73</td>
+              <td class="num h-l">91</td>
+              <td class="num points">35</td>
+            </tr>
+          
+            <tr >
+              <td class="index">15.</td>
+              <td class="ta-l">Jukurit</td>
+              <td class="num">34</td>
+              <td class="num">9</td>
+              <td class="num">6</td>
+              <td class="num">19</td>
+              <td class="num">1</td>
+              <td class="num h-l">67</td>
+              <td class="num h-l">96</td>
+              <td class="num points">34</td>
+            </tr>
+          
+        </tbody>
+      </table>
+    </div>
+    <a href="/tilastot/joukkueet/" class="more" target="_blank">
+      Katso lisää <i class="fa fa-caret-right"></i>
+    </a>
+  </div>
+
+      </div>
+    </div>
+  </body>
+</html>

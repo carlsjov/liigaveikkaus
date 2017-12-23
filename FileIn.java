@@ -24,41 +24,35 @@ public class FileIn{
     }
     protected TeamsGuess[] ReadGuess(){
         Scanners(1);
-        Teams[] tG = new Teams[15];
         String name = "";
-        int i = 0;
         int g = 0;
         boolean newP = true;
         boolean first = true;
         while(rG.hasNext()){
             if(first){
-                teamsG = new TeamsGuess[rG.nextInt()];
+                teamsG = new TeamsGuess[rG.nextInt()]; 
                 first = false;
             }
             else{
-                if(newP){
-                    name = rG.next();
-                    //System.out.println("n"+name);
-                    newP = false;
-                }
-                else{
-                    String a = rG.next();
-                    //System.out.println(a);
-                    int b = rG.nextInt();
-                    tG[i] = new Teams(a,b);
-                    i++;
-                    if(i==15){
-                        newP = true;
-                        teamsG[g] = new TeamsGuess(name,tG);
-                        g++;
-                        i = 0;
-                    }
-                }
+                name = rG.next();
+                Teams[] a = TG();
+                teamsG[g] = new TeamsGuess(name,a);
+                g++;
             }
         }
         System.out.println("!lataus rG suoritettu!");
         rG.close();
         return teamsG;
+    }
+    private Teams[] TG(){
+        Teams[] tG = new Teams[15];
+        for(int i=0;i<15;i++){
+            String a = rG.next();
+            //System.out.println(a);
+            int b = rG.nextInt();
+            tG[i] = new Teams(a,b);
+        }
+        return tG;
     }
     private void Scanners(int i) {
         try{
