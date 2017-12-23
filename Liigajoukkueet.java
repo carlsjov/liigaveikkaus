@@ -8,7 +8,7 @@ public class Liigajoukkueet {
         liiga[3] = new Teams("Karpat",4);
         liiga[4] = new Teams("HPK",5);
         liiga[5] = new Teams("JYP",6);
-        liiga[6] = new Teams("HIFK",7);
+        liiga[6] = new Teams("HIFK",0);
         liiga[7] = new Teams("Sport",8);
         liiga[8] = new Teams("Jukurit",9);
         liiga[9] = new Teams("KooKoo",10);
@@ -19,45 +19,27 @@ public class Liigajoukkueet {
         liiga[14] = new Teams("Ilves",15);
         System.out.println("joukkueet tehty");
         FileOut tallenneus = new FileOut();
-        tallenneus.FileOut(liiga);
+        tallenneus.FileOutL(liiga);
         System.out.println("tallennettu");
         return liiga;
     }
     public static void main(String args[]){
-        Liigajoukkueet o = new Liigajoukkueet();
-        SetTeams t = new SetTeams();
-        Teams[] liiga = o.getTeams();
         FileIn f = new FileIn();
-        liiga = f.ReadLiiga();
-        TeamsGuess[] tG = f.ReadGuess();
-        
+        f.liigaURL();
+        TeamsGuess[] players = f.ReadGuess();
+        Teams[] liiga = f.ReadLiiga();
+        System.out.println("Tulostetaan runkosarja");
         for (int i = 0;i < liiga.length; i++){
             System.out.println(liiga[i]);
         }
-        if(tG.length>0){
-            for (int i = 0;i < tG.length; i++){
-                System.out.println(tG[i].plauerName);
-                Teams[] b = tG[i].getTeams();
-                for (int x = 0;x < b.length; x++){
-                    System.out.println(b[x]);
+        for (int i = 0;i <players.length; i++){
+            System.out.println(players[i].getName());
+            Teams[] guess = players[i].getTeams(); 
+            for (int t = 0;t < guess.length; t++){
+                System.out.println(guess[t]);
             }
         }
-        }
-        else{
-            System.out.println("Ei pelaajia");
-        }
-        System.out.println(liiga[5].givePlace());
-        System.out.println(liiga[14].giveName());
-        System.out.println(liiga[5].givePlace());
-        liiga[14] = new Teams("karhu");
-        System.out.println(liiga[14].giveName());
-        liiga = t.set();
-        System.out.println("Liigajoukkueet p�ivitetty");
-        for (int i = 0;i < liiga.length; i++){
-            System.out.println(liiga[i]);
-        }
-        liiga = t.rightOrderList();
-        System.out.println("Liigajoukkueet oikeassa j�rjestyksess�");
+        System.out.println("Tulostetaan runkosarja");
         for (int i = 0;i < liiga.length; i++){
             System.out.println(liiga[i]);
         }

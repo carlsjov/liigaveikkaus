@@ -11,17 +11,22 @@ public class FileOut{
     private PrintWriter pw;
     private PrintWriter pw2;
     
-    public void FileOut (Teams[] teams){
-        Reader(0);
-
-        for(int i=0;i<15;i++){
-            pw.println(teams[i].giveName()+" "+teams[i].givePlace());
+    public void FileOutL(Teams[] teams){
+        try{
+            pw = new PrintWriter(new FileWriter("liiga.txt"));
+            for(int i=0;i<15;i++){
+                pw.println(teams[i].giveName()+" "+teams[i].givePlace());
+            }
+        }
+        catch (IOException e){
+            System.out.println("Tiedostoa ei l�ytynyt");
         }
 
         pw.close();
+        System.out.println("liiga.txt done");
     }
 
-    public void FileOut (TeamsGuess[] teamGuess){
+    public void FileOutG (TeamsGuess[] teamGuess){
         Reader(1);
         if(teamGuess.length>0){
             for(int k=0;k<teamGuess.length;k++){
@@ -33,6 +38,27 @@ public class FileOut{
             }
         }
         pw.close();
+    }
+    protected void loadURL(){
+        try{
+            PrintWriter lr = new PrintWriter(new FileWriter("liigaURL.txt"));
+
+            URL liigaUrl = new URL("http://liiga.fi/sarjataulukko");
+            BufferedReader in = new BufferedReader(
+            new InputStreamReader(liigaUrl.openStream()));
+    
+            String inputLine;
+            while ((inputLine = in.readLine()) != null){
+                //System.out.println(inputLine);
+                lr.println(inputLine);
+            }
+            in.close();
+            lr.close();
+            System.out.println("!sarjataulukko lataus suoritettu!");
+        }
+        catch (IOException e){
+            System.out.println("fail");
+        }
     }
     private void Reader(int t){
         try{
@@ -52,34 +78,35 @@ public class FileOut{
         try{
             PrintWriter lr = new PrintWriter(new FileWriter("liigaURL.txt"));
 
-            URL liigaUrl = new URL("https://www.yle.fi/tekstitv/txt/P223_01.html");
+            URL liigaUrl = new URL("http://liiga.fi/sarjataulukko");
             BufferedReader in = new BufferedReader(
             new InputStreamReader(liigaUrl.openStream()));
-    
+
             String inputLine;
             while ((inputLine = in.readLine()) != null){
-                System.out.println(inputLine);
+                //System.out.println(inputLine);
                 lr.println(inputLine);
             }
             in.close();
             lr.close();
+            System.out.println("!sarjataulukko lataus suoritettu!");
         }
         catch (IOException e){
             System.out.println("faill");
         }
-     try{
-         FileWriter testif = new FileWriter("testi.txt");
-         PrintWriter testip = new PrintWriter(testif);
+        try{
+            FileWriter testif = new FileWriter("testi.txt");
+            PrintWriter testip = new PrintWriter(testif);
 
-         testip.println("moikka");
-         testip.println("moikka2");
-         //pw.println("moikka3");
-         
-         testip.close();
-     }
-     catch (IOException e){
-        System.out.println("Ei toimikkaa...");
-     }   
+            testip.println("moikka");
+            testip.println("moikka2");
+            //pw.println("moikka3");
+            
+            testip.close();
+        }
+        catch (IOException e){
+            System.out.println("Ei toimikkaa...");
+        }   
     }//main
 
 }//FileReader
