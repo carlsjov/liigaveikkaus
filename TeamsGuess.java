@@ -1,3 +1,5 @@
+
+
 /*
 TeamsGuess on arvaajan joukkue olio. Olio perii team olion ominaisuuksia Teams
 */
@@ -17,5 +19,8 @@ public class TeamsGuess{
     }
     protected Teams[] getTeams(){
         return teams;
+    }
+    protected String getName(){
+        return plauerName;
     }
 }
