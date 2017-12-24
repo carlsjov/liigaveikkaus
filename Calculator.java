@@ -23,9 +23,9 @@ public class Calculator {
     int points = 0;
         for(int t=0;t<runko.length;t++){
             int a = players[i].getTeam(t).givePlace();
-            int b = runko[i].givePlace();
+            int b = runko[t].givePlace();
             int c = Math.abs(b-a);
-            //System.out.println("Et�isyys: "+c);
+            //System.out.println(players[i].getName()+" Et�isyys: "+c);
             if(c<8){
                 double d = ((8-c)/8.00)*100;
                 //System.out.println("prosentti: "+d);

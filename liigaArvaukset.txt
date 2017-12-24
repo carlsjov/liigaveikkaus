@@ -1,5 +1,5 @@
-2
-Pekka 722
+3
+Pekka 822
 assat 1
 Lukko 2
 TPS 3
@@ -15,7 +15,7 @@ Pelicans 12
 KalPa 13
 Tappara 14
 Ilves 15
-Liisa 784
+Liisa 760
 assat 1
 Lukko 2
 TPS 8
@@ -31,3 +31,19 @@ Pelicans 12
 KalPa 13
 Tappara 14
 Ilves 9
+Jarkko 1500
+assat 5
+Lukko 7
+TPS 2
+Karpat 1
+HPK 14
+JYP 4
+HIFK 6
+Sport 12
+Jukurit 15
+KooKoo 11
+SaiPa 8
+Pelicans 10
+KalPa 9
+Tappara 3
+Ilves 13
