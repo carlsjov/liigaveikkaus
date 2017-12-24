@@ -15,12 +15,15 @@ public class TeamsGuess{
         this.points = points;
     }
     protected int getPoints() {
-        return points; 
+        return points;
     }
     protected Teams[] getTeams(){
         return teams;
     }
     protected String getName(){
         return plauerName;
+    }
+    protected Teams getTeam(int i){
+        return teams[i];
     }
 }

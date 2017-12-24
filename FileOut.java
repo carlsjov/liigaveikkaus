@@ -23,19 +23,24 @@ public class FileOut{
         }
 
         pw.close();
-        System.out.println("liiga.txt done");
+        //System.out.println("liiga.txt done");
     }
 
     public void FileOutG (TeamsGuess[] teamGuess){
         Reader(1);
-        if(teamGuess.length>0){
-            for(int k=0;k<teamGuess.length;k++){
-                pw.println(teamGuess[k].getName()+" "+teamGuess[k].getPoints());
-                Teams[] teamsG = teamGuess[k].getTeams();
-                for(int t=0;t<15;t++){
-                    pw.println(teamsG[t].giveName()+teamsG[t].givePlace());
+        try{
+            pw.println(teamGuess.length);
+            if(teamGuess.length>0){
+                for(int k=0;k<teamGuess.length;k++){
+                    pw.println(teamGuess[k].getName()+" "+teamGuess[k].getPoints());
+                    Teams[] teamsG = teamGuess[k].getTeams();
+                    for(int t=0;t<15;t++){
+                        pw.println(teamsG[t].giveName()+" "+teamsG[t].givePlace());
+                    }
                 }
             }
+        }catch (Exception e){
+            System.out.println("FileOutG fail");
         }
         pw.close();
     }
@@ -54,10 +59,10 @@ public class FileOut{
             }
             in.close();
             lr.close();
-            System.out.println("!sarjataulukko lataus suoritettu!");
+            //System.out.println("!sarjataulukko lataus suoritettu!");
         }
         catch (IOException e){
-            System.out.println("fail");
+            System.out.println("loadURL() fail");
         }
     }
     private void Reader(int t){
@@ -70,7 +75,7 @@ public class FileOut{
             }
         }
         catch (IOException e){
-            System.out.println("Tiedostoa ei l�ytynyt");
+            System.out.println("TXT file error");
         }
     }
 
@@ -89,7 +94,7 @@ public class FileOut{
             }
             in.close();
             lr.close();
-            System.out.println("!sarjataulukko lataus suoritettu!");
+            //System.out.println("!sarjataulukko lataus suoritettu!");
         }
         catch (IOException e){
             System.out.println("faill");

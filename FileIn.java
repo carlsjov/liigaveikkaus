@@ -18,29 +18,32 @@ public class FileIn{
             tG[i] = new Teams(a,b);
             i++;
         }
-        System.out.println("!lataus rL suoritettu!");
+        //System.out.println("!lataus rL suoritettu!");
         rL.close();
         return tG;
     }
     protected TeamsGuess[] ReadGuess(){
         Scanners(1);
         String name = "";
+        int points;
         int g = 0;
         boolean newP = true;
-        boolean first = true;
-        while(rG.hasNext()){
-            if(first){
-                teamsG = new TeamsGuess[rG.nextInt()]; 
-                first = false;
-            }
-            else{
+        int h = rG.nextInt();
+        teamsG = new TeamsGuess[h];
+        try{
+            while(rG.hasNext()){
                 name = rG.next();
+                //System.out.println(name);
+                points = rG.nextInt();
                 Teams[] a = TG();
                 teamsG[g] = new TeamsGuess(name,a);
+                teamsG[g].setPoints(points);
                 g++;
             }
+        } catch (Exception e){
+            System.out.println("ReadGuess() fail");
         }
-        System.out.println("!lataus rG suoritettu!");
+        //System.out.println("!lataus rG suoritettu!");
         rG.close();
         return teamsG;
     }
@@ -74,7 +77,7 @@ public class FileIn{
                 list[i]=tL.next();
                 i++;
             }
-            System.out.println("Luettu");
+            //System.out.println("Luettu");
         }
         catch (Exception e){
             System.out.println("Scanners fail");
@@ -113,11 +116,11 @@ public class FileIn{
         catch (Exception e){
             System.out.println("Scanners fail");
         }
-        System.out.println("Tulostetaan n�yte");
+        /*System.out.println("Tulostetaan n�yte");
         for(int i=0;i<15;i++){
             System.out.println(liiga[i]);
         }
-        System.out.println("Tulostetaan n�yte Loppu");
+        System.out.println("Tulostetaan n�yte Loppu");*/
         fO.FileOutL(liiga);
     }
     public static void main(String[] args) {

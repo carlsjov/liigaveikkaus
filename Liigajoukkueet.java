@@ -25,9 +25,12 @@ public class Liigajoukkueet {
     }
     public static void main(String args[]){
         FileIn f = new FileIn();
+        Calculator c = new Calculator();
         f.liigaURL();
         TeamsGuess[] players = f.ReadGuess();
         Teams[] liiga = f.ReadLiiga();
+        c.sendInfo(liiga, players);
+        players = f.ReadGuess();
         System.out.println("Tulostetaan runkosarja");
         for (int i = 0;i < liiga.length; i++){
             System.out.println(liiga[i]);
@@ -39,9 +42,9 @@ public class Liigajoukkueet {
                 System.out.println(guess[t]);
             }
         }
-        System.out.println("Tulostetaan runkosarja");
-        for (int i = 0;i < liiga.length; i++){
-            System.out.println(liiga[i]);
+        System.out.println("Tulostetaan pisteet");
+        for (int i = 0;i < players.length; i++){
+            System.out.println(players[i].getName()+" "+((double) players[i].getPoints())*0.01);
         }
     }
 }

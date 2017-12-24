@@ -1,5 +1,5 @@
 2
-Pekka
+Pekka 722
 assat 1
 Lukko 2
 TPS 3
@@ -15,7 +15,7 @@ Pelicans 12
 KalPa 13
 Tappara 14
 Ilves 15
-Liisa
+Liisa 784
 assat 1
 Lukko 2
 TPS 8
