@@ -44,7 +44,7 @@ public class Liigajoukkueet {
         }
         System.out.println("Tulostetaan pisteet");
         for (int i = 0;i < players.length; i++){
-            System.out.println(players[i].getName()+" "+((double) players[i].getPoints())*0.01);
+            System.out.println(players[i].getName()+" "+((double) players[i].getPoints())/100.00);
         }
     }
 }
