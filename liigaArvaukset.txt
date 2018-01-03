@@ -1,5 +1,5 @@
 4
-Johan 24
+Testi_1 24
 assat 8
 Lukko 9
 TPS 3
@@ -15,7 +15,7 @@ Pelicans 11
 KalPa 14
 Tappara 2
 Ilves 12
-Carl 9
+Testi_2 9
 assat 8
 Lukko 6
 TPS 3
@@ -31,7 +31,7 @@ Pelicans 12
 KalPa 10
 Tappara 1
 Ilves 9
-Eliisa 5
+Testi_3 5
 assat 8
 Lukko 10
 TPS 5
@@ -47,7 +47,7 @@ Pelicans 11
 KalPa 7
 Tappara 1
 Ilves 9
-Olli 9
+Testi_4 9
 assat 4
 Lukko 11
 TPS 2
