@@ -21,6 +21,7 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
     private JPanel b = new JPanel();
     private JPanel c = new JPanel();
     private JPanel d = new JPanel();
+    private JPanel e = new JPanel();
     public Teams[] liiga = new Teams[15];
     public TeamsGuess[] arvaukset;
     public TeamsGuess[] suurinarvaus;
@@ -70,6 +71,17 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
         add(r,BorderLayout.SOUTH);
         add(d,BorderLayout.CENTER);
         setSize(new Dimension(1000,korkeus()));
+        JFrame jf = new JFrame("taulukko");
+        jf.setVisible(true);
+        jf.setSize(new Dimension(1300,korkeus()));
+        e.setLayout(new GridLayout(arvaukset.length,0));
+        for(int g=0;g<arvaukset.length;g++){
+            e.add(tarkemmatpisteet(g));
+        }
+        JScrollPane scrollPane = new JScrollPane(e);
+        jf.add(scrollPane,BorderLayout.CENTER);
+        JLabel l = new JLabel("Pisteet arvauksesta = Pa, Play-off pisteet = Po, Kuuden joukossa = Kj, Kuusi oikein = Ko, Runkosarjan 1. = R1, Runkosarjan viimeinen = Rv");
+        jf.add(l,BorderLayout.SOUTH);
         //frame.add(b);
         //frame.add(draw(),BorderLayout.CENTER);
     }
@@ -80,6 +92,51 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
         else{
             return(liiga.length*25);
         }
+    }
+    protected JPanel tarkemmatpisteet(int p){
+        JPanel t = new JPanel();
+        Object rowData[][] = new Object[8][17];
+        for (int i = 0; i<15;i++) {
+            rowData[0][i+1] = liiga[i].givePlace();
+            rowData[1][i+1] = arvaukset[p].teams[i].givePlace();
+            for (int k=0;k<6;k++) {
+                if (arvaukset[0].teamsPoints[k][i]==0&&k>0)
+                    rowData[k+2][i+1] = "--";
+                else
+                    rowData[k+2][i+1] = arvaukset[p].teamsPoints[k][i];
+            }
+        }
+        for (int k=0;k<6;k++) {
+            rowData[k+2][16] = arvaukset[p].pointsList[k];
+        }
+        rowData[0][0] ="Liiga";
+        rowData[1][0] ="Arvaus";
+        rowData[2][0] ="Pa";
+        rowData[3][0] ="Po";
+        rowData[4][0] ="Kj";
+        rowData[5][0] ="Ko";
+        rowData[6][0] ="R1";
+        rowData[7][0] ="Rv";
+        rowData[0][16] ="--";
+        rowData[1][16] ="--";
+        Object columnNames[] = new Object[17];
+        for(int f=0;f<15;f++){
+            columnNames[f+1] = liiga[f].giveName();
+        }
+        columnNames[16] = "Yhteensä";
+        columnNames[0] = " ";
+        JTable table = new JTable(rowData, columnNames);
+        JLabel pl = new JLabel(arvaukset[p].getName()+" Pisteet:"+arvaukset[p].getPoints());
+        table.setFillsViewportHeight(true);
+        table.setPreferredScrollableViewportSize(new Dimension(650,128));
+        JLabel l = new JLabel(" ");
+        JScrollPane scrollPane = new JScrollPane(table);
+        //scrollPane.setSize(20,20);
+        t.setLayout(new BorderLayout());
+        t.add(pl,BorderLayout.NORTH);
+        t.add(scrollPane,BorderLayout.CENTER);
+        t.add(l,BorderLayout.SOUTH);
+        return t;
     }
     public void actionPerformed(ActionEvent e) {
         System.out.println("refresh");
@@ -258,10 +315,12 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
                     //System.out.println(liiga[t].giveName()+" "+((c*(-1))+3));
                     arvaus += (c*(-1))+3;
                     arvaukset[i].pointsList[0] += (c*(-1))+3;
+                    arvaukset[i].teamsPoints[0][t] = (c*(-1))+3;
                     points = points+((c*(-1))+3);
                     //Play-off
                     if((a<11)&&(b<11)){
                         points++;
+                        arvaukset[i].teamsPoints[1][t]++;
                         arvaukset[i].pointsList[1]++;
                         off++;
                     }
@@ -270,8 +329,10 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
                         points++;
                         kuusi++;
                         kj++;
+                        arvaukset[i].teamsPoints[2][t]++;
                         arvaukset[i].pointsList[2]++;
                         if(kuusi==6){
+                            arvaukset[i].teamsPoints[3][t]++;
                             arvaukset[i].pointsList[3]++;
                             ko++;
                             points++;
@@ -280,6 +341,7 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
                     //viimeinen oikein
                     if((a==15)&&(b==15)){
                         points++;
+                        arvaukset[i].teamsPoints[5][t]++;
                         arvaukset[i].pointsList[5]++;
                         rv++;
                     }
@@ -287,6 +349,7 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
                     if((a==1)&&(b==1)){
                         points++;
                         ry++;
+                        arvaukset[i].teamsPoints[4][t]++;
                         arvaukset[i].pointsList[4]++;
                     }
                 }
@@ -487,6 +550,7 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
         final Teams[] teams;
         int points;
         int[] pointsList = new int[6];
+        int[][] teamsPoints = new int[6][15];
         public TeamsGuess(String plauerName, Teams[] teams){
             this.plauerName = plauerName;
             this.teams = teams;
