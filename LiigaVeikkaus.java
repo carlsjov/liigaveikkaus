@@ -100,7 +100,7 @@ public class LiigaVeikkaus extends JFrame implements ActionListener{
             rowData[0][i+1] = liiga[i].givePlace();
             rowData[1][i+1] = arvaukset[p].teams[i].givePlace();
             for (int k=0;k<6;k++) {
-                if (arvaukset[0].teamsPoints[k][i]==0&&k>0)
+                if (arvaukset[p].teamsPoints[k][i]==0&&k>0)
                     rowData[k+2][i+1] = "--";
                 else
                     rowData[k+2][i+1] = arvaukset[p].teamsPoints[k][i];
